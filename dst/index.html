@@ -7,12 +7,39 @@
        <link href="libs/plyr.css" rel="stylesheet">
        <script src="video.js"></script>
        <link href="video.css" rel="stylesheet">
+       <style type="text/css">
+           html, body {
+               background: #336699;
+               color: #ffffff;
+               font-family: sans-serif;
+           }
+           body {
+               padding: 20px 50px;
+           }
+       </style>
    </head>
    <body>
+       <h2>ase-meta-diaboli</h2>
        <div class="video">
            <video poster="ase-meta-diaboli.jpg" controls autoplay loop muted playsinline>
-               <source src="ase-meta-diaboli.hls/index.m3u8" type="application/vnd.apple.mpegurl">
                <source src="ase-meta-diaboli.mp4" type="video/mp4; codecs=avc1.4d401f">
+               <source src="ase-meta-diaboli.hls/index.m3u8" type="application/vnd.apple.mpegurl">
+           </video>
+       </div>
+
+       <h2>ase-code-analyze</h2>
+       <div class="video">
+           <video poster="ase-code-analyze.jpg" controls autoplay loop muted playsinline>
+               <source src="ase-code-analyze.mp4" type="video/mp4; codecs=avc1.4d401f">
+               <source src="ase-code-analyze.hls/index.m3u8" type="application/vnd.apple.mpegurl">
+           </video>
+       </div>
+
+       <h2>ase-arch-discover</h2>
+       <div class="video">
+           <video poster="ase-arch-discover.jpg" controls autoplay loop muted playsinline>
+               <source src="ase-arch-discover.mp4" type="video/mp4; codecs=avc1.4d401f">
+               <source src="ase-arch-discover.hls/index.m3u8" type="application/vnd.apple.mpegurl">
            </video>
        </div>
    </body>
