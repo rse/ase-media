@@ -4,8 +4,19 @@
 ##  Licensed under GPL 3.0 <https://spdx.org/licenses/GPL-3.0-only>
 ##
 
-all:
+all: \
+    ase-all-in-one \
+    ase-code-analyze \
+    ase-code-craft \
+    ase-task-edit \
+    ase-task-implement \
+    ase-meta-evaluate \
+    ase-arch-discover \
+    ase-meta-persona \
+    ase-meta-diaboli
 
+ase-all-in-one:
+	bash render.bash ase-all-in-one
 ase-code-analyze:
 	bash render.bash ase-code-analyze
 ase-code-craft:
@@ -22,8 +33,6 @@ ase-meta-persona:
 	bash render.bash ase-meta-persona
 ase-meta-diaboli:
 	bash render.bash ase-meta-diaboli
-ase-all-in-one:
-	bash render.bash ase-all-in-one
 
 clean:
 	-rm -f *.gif *.mp4 *.tape

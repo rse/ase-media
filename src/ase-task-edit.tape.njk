@@ -5,7 +5,7 @@
 ##
 
 {% set name = "ase-task-edit" %}
-{% set claude_flags = "-T -R -A" %}
+{% set claude_flags = "-T -R -A --permission-mode bypassPermissions" %}
 {% set font_size = 18 %}
 
 {% include "common-prolog.tape.njk" %}
