@@ -1,0 +1,44 @@
+##
+##  Agentic Software Engineering (ASE)
+##  Copyright (c) 2025-2026 Dr. Ralf S. Engelschall <rse@engelschall.com>
+##  Licensed under GPL 3.0 <https://spdx.org/licenses/GPL-3.0-only>
+##
+
+{% set name = "ase-code-craft" %}
+{% set claude_flags = "-T -R -A" %}
+{% set font_size = 18 %}
+
+{% include "common-prolog.tape.njk" %}
+
+Type '/ase-code-craft hello: "ase hello" CLI command which prints a nice "Hello World!" in blue to the terminal and which supports a CLI option -s/--subject with default value "Hello" for greeting a particular subject.'
+Enter
+
+Wait+Screen /Select Approach/
+Sleep 2s
+Down
+Sleep 4s
+Up
+Sleep 4s
+Enter
+
+Wait+Screen /DONE/
+Sleep 2s
+Down
+Sleep 1s
+Down
+Sleep 1s
+Down
+Sleep 2s
+Up
+Sleep 1s
+Up
+Sleep 1s
+Up
+Sleep 2s
+Enter
+
+Wait+Screen /⏸ claudeX/
+Sleep 8s
+
+{% include "common-epilog.tape.njk" %}
+

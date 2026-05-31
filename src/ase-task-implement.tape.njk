@@ -1,0 +1,32 @@
+##
+##  Agentic Software Engineering (ASE)
+##  Copyright (c) 2025-2026 Dr. Ralf S. Engelschall <rse@engelschall.com>
+##  Licensed under GPL 3.0 <https://spdx.org/licenses/GPL-3.0-only>
+##
+
+{% set name = "ase-task-implement" %}
+{% set claude_flags = "-T -R -A --permission-mode bypassPermissions" %}
+{% set font_size = 18 %}
+
+{% include "common-prolog.tape.njk" %}
+
+#Escape
+#Type "[Z"
+#Sleep 1s
+
+Type '/ase-task-implement hello'
+Enter
+
+Wait+Screen /DONE/
+Sleep 2s
+Down
+Sleep 1s
+Up
+Sleep 2s
+Enter
+
+Wait+Screen /⏸ claudeX/
+Sleep 8s
+
+{% include "common-epilog.tape.njk" %}
+

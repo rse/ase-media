@@ -1,0 +1,27 @@
+{
+    "name":                                 "ase",
+    "description":                          "Agentic Software Engineering (ASE)",
+    "private":                              true,
+    "keywords":                             [ "agentic", "ai", "coding", "tool", "cli", "software", "engineering" ],
+    "homepage":                             "http://github.com/rse/ase",
+    "repository":                           { "url": "git+https://github.com/rse/ase.git", "type": "git" },
+    "bugs":                                 { "url": "http://github.com/rse/ase/issues" },
+    "version":                              "0.0.0",
+    "license":                              "GPL-3.0-only",
+    "author": {
+        "name":                             "Dr. Ralf S. Engelschall",
+        "email":                            "rse@engelschall.com",
+        "url":                              "http://engelschall.com"
+    },
+    "devDependencies": {
+        "@rse/nunjucks-cli":                "2.3.0",
+        "@rse/nunjucks-addons":             "2.2.0"
+    },
+    "engines": {
+        "npm":                              ">=10.0.0",
+        "node":                             ">=22.0.0"
+    },
+    "scripts": {
+        "start":                            ""
+    }
+}
