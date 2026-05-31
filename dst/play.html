@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width">
+        <link rel="shortcut icon" type="image/x-icon" href="/.libs/favicon-32x32.ico">
+        <link rel="icon" type="image/png" sizes="96x96" href="/.libs/favicon-96x96.png">
+        <style>
+            html, body {
+                margin:          0;
+                padding:         0;
+                width:           100vw;
+                height:          100vh;
+                overflow:        hidden;
+                background:      #222222;
+                font-family:     sans-serif;
+            }
+            #canvas {
+                width:           100vw;
+                height:          100vh;
+                overflow:        hidden;
+                background:      #222222;
+                display:         flex;
+                flex-direction:  column;
+                justify-content: center;
+                align-items:     center;
+            }
+            #container {
+                --plyr-color-main:         #3399ff;
+                --plyr-menu-background:    #111111c0;
+                --plyr-menu-color:         #ffffff;
+                --plyr-tooltip-background: #111111c0;
+                --plyr-tooltip-color:      #ffffff;
+                aspect-ratio: 16/9;
+            }
+            @media (min-aspect-ratio: 16/9) {
+                #container {
+                    width:  auto;
+                    height: 100vh;
+                }
+            }
+            @media (max-aspect-ratio: 16/9) {
+                #container {
+                    width:  100vw;
+                    height: auto;
+                }
+            }
+            #video {
+                width: 100%;
+                height: 100%;
+                aspect-ratio: 16/9;
+                background: transparent;
+            }
+        </style>
+        <title>Play</title>
+        <script src="libs/hls.js"></script>
+        <script src="libs/plyr.js"></script>
+        <link href="libs/plyr.css" rel="stylesheet">
+        <script src="video.js"></script>
+        <script>
+            const parseQueryString = (url) => {
+                const queryString = (url || window.location.hash).split("?")[]
+                console.log(queryString, window.location.hash)
+                if (!queryString)
+                    return {}
+                const paramsArray = queryString.split("&")
+                const result = {}
+                for (let i = 0; i < paramsArray.length; i++) {
+                    const param = paramsArray[i].split("=")
+                    const key   = decodeURIComponent(param[0])
+                    const value = decodeURIComponent(param[1] || "")
+                    if (key) {
+                        if (result[key]) {
+                            if (Array.isArray(result[key]))
+                                result[key].push(value)
+                            else
+                                result[key] = [ result[key], value ]
+                        }
+                        else
+                            result[key] = value
+                    }
+                }
+                return result
+            }
+            const parseBoolString = (str, defaultVal) => {
+                const trueValues  = [ "1", "yes", "true" ]
+                const falseValues = [ "0", "no", "false" ]
+                str = (str || "").toString()
+                if (trueValues.includes(str.toLowerCase()))
+                    return true
+                else if (falseValues.includes(str.toLowerCase()))
+                    return false
+                else
+                    return defaultVal
+            }
+            const init = () => {
+                const qs = parseQueryString()
+                console.log(qs)
+                const source      = parseBoolString(qs["source"],      "")
+                const useplyr     = parseBoolString(qs["useplyr"],     true)
+                const controls    = parseBoolString(qs["controls"],    true)
+                const muted       = parseBoolString(qs["muted"],       true)
+                const autoplay    = parseBoolString(qs["autoplay"],    true)
+                const playsinline = parseBoolString(qs["playsinline"], true)
+
+                console.log("FUCK", source)
+
+                const video = document.getElementById("video")
+                video.controls    = controls
+                video.muted       = muted
+                video.autoplay    = autoplay
+                video.playsInline = playsinline
+
+                if (Hls.isSupported()) {
+                    const hls = new Hls({
+                        lowLatencyMode:              false,
+                        liveDurationInfinity:        true,
+                        maxLiveSyncPlaybackRate:     2.0,
+                        maxBufferLength:             20,
+                        backBufferLength:            Infinity,
+                        liveSyncDuration:            8,
+                        liveMaxLatencyDuration:      12,
+                        initialLiveManifestSize:     1
+                    })
+                    hls.on(Hls.Events.ERROR, (ev, data) => {
+                        if (data.type === Hls.ErrorTypes.MEDIA_ERROR) {
+                            setTimeout(() => {
+                                hls.recoverMediaError()
+                            }, 500)
+                        }
+                        if (data.fatal) {
+                            hls.destroy()
+                            setTimeout(init, 2000)
+                        }
+                    })
+                    hls.on(Hls.Events.MEDIA_ATTACHED, () => {
+                        hls.loadSource(source + "/index.m3u8" + window.location.search)
+                        hls.on(Hls.Events.MANIFEST_PARSED, () => {
+                            if (useplyr) {
+                                const plyr = new Plyr(video, {
+                                    iconUrl: "libs/plyr.svg",
+                                    displayDuration: true,
+                                    autoplay: autoplay,
+                                    muted: muted,
+                                    storage: { enabled: false, key: "plyr" },
+                                    tooltips: {
+                                        controls: controls,
+                                        seek: false
+                                    },
+                                    settings: [],
+                                    controls: controls ? [
+                                        "play-large",
+                                        "play",
+                                        "mute",
+                                        "volume",
+                                        "fullscreen"
+                                    ] : []
+                                })
+                            }
+                            video.play()
+                        })
+                    })
+                    hls.attachMedia(video)
+                }
+                else if (video.canPlayType("application/vnd.apple.mpegurl")) {
+                    fetch("index.m3u8").then(() => {
+                        video.src = source + "/index.m3u8"
+                        video.play()
+                    })
+                }
+            }
+            window.addEventListener("DOMContentLoaded", init)
+        </script>
+    </head>
+    <body>
+        <div id="canvas" class="canvas">
+            <div id="container" class="container">
+                <video id="video" class="video">
+                </video>
+            </div>
+        </div>
+    </body>
+</html>

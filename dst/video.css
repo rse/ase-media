@@ -1,0 +1,30 @@
+
+.video {
+    --plyr-color-main:         #3399ff;
+    --plyr-menu-background:    #111111c0;
+    --plyr-menu-color:         #ffffff;
+    --plyr-tooltip-background: #111111c0;
+    --plyr-tooltip-color:      #ffffff;
+    border-radius: 20px;
+    aspect-ratio: 1200/1400;
+    background: transparent;
+}
+@media (min-aspect-ratio: 1200/1400) {
+    .video {
+        width:  auto;
+        height: 100vh;
+    }
+}
+@media (max-aspect-ratio: 1200/1400) {
+    .video {
+        width:  100vw;
+        height: auto;
+    }
+}
+.video video {
+    border-radius: 10px;
+}
+.video .plyr__video-wrapper {
+    background: transparent !important;
+}
+

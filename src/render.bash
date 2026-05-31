@@ -20,9 +20,15 @@ video2hls \
     --output ../dst/$session.hls \
     --output-overwrite \
     --hls-type fmp4 \
+    --no-mp4 \
+    --no-audio \
     --poster-quality 80 \
-    --video-widths   1920 1280 854 640 428 \
-    --video-bitrates 4500 2500 1300 800 400 \
+    --ratio 1200:1400 \
+    --video-widths   1200  600 \
+    --video-bitrates 2000 1000 \
     -- \
     ../dst/$session.mp4
+
+mv ../dst/$session.hls/poster.jpg \
+   ../dst/$session.jpg
 

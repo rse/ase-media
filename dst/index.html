@@ -1,18 +1,19 @@
+<!DOCTYPE html>
 <html>
+   <head>
+       <title>ASE</title>
+       <script src="libs/hls.js"></script>
+       <script src="libs/plyr.js"></script>
+       <link href="libs/plyr.css" rel="stylesheet">
+       <script src="video.js"></script>
+       <link href="video.css" rel="stylesheet">
+   </head>
    <body>
-       <img src="ase-meta-diaboli.gif"/>
-       <p/>
-       <video poster="poster.jpg" controls>
-           <source src="ase-meta-diaboli/index.m3u8" type="application/vnd.apple.mpegurl">
-           <source src="ase-meta-diaboli/progressive.mp4" type="video/mp4; codecs=avc1.4d401f">
-           <source src="ase-meta-diaboli.mp4" type="video/mp4">
-       </video>
-       <video poster="poster.jpg" controls>
-           <source src="ase-meta-diaboli/index.m3u8" type="application/vnd.apple.mpegurl">
-           <source src="ase-meta-diaboli.mp4" type="video/mp4">
-       </video>
-       <video poster="poster.jpg" controls>
-           <source src="ase-meta-diaboli/index.m3u8" type="application/vnd.apple.mpegurl">
-       </video>
+       <div class="video">
+           <video poster="ase-meta-diaboli.jpg" controls autoplay loop muted playsinline>
+               <source src="ase-meta-diaboli.hls/index.m3u8" type="application/vnd.apple.mpegurl">
+               <source src="ase-meta-diaboli.mp4" type="video/mp4; codecs=avc1.4d401f">
+           </video>
+       </div>
    </body>
 </html>
