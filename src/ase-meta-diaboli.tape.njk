@@ -1,0 +1,21 @@
+##
+##  Agentic Software Engineering (ASE)
+##  Copyright (c) 2025-2026 Dr. Ralf S. Engelschall <rse@engelschall.com>
+##  Licensed under GPL 3.0 <https://spdx.org/licenses/GPL-3.0-only>
+##
+
+{% set name = "ase-meta-diaboli" %}
+{% set claude_flags = "-T -R -A" %}
+{% set font_size = 16 %}
+
+{% include "common-prolog.tape.njk" %}
+
+Type '/ase-meta-diaboli We should rewrite the project in RUST'
+Enter
+Sleep 2s
+
+Wait+Screen /⏸ claudeX/
+Sleep 8s
+
+{% include "common-epilog.tape.njk" %}
+

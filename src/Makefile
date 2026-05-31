@@ -20,6 +20,8 @@ ase-arch-discover:
 	bash render.bash ase-arch-discover
 ase-meta-persona:
 	bash render.bash ase-meta-persona
+ase-meta-diaboli:
+	bash render.bash ase-meta-diaboli
 
 clean:
 	-rm -f *.gif *.mp4 *.tape

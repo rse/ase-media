@@ -24,5 +24,5 @@ video2hls \
     --video-widths   1920 1280 854 640 428 \
     --video-bitrates 4500 2500 1300 800 400 \
     -- \
-    $session.mp4
+    ../dst/$session.mp4
 
