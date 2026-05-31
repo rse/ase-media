@@ -22,6 +22,8 @@ ase-meta-persona:
 	bash render.bash ase-meta-persona
 ase-meta-diaboli:
 	bash render.bash ase-meta-diaboli
+ase-all-in-one:
+	bash render.bash ase-all-in-one
 
 clean:
 	-rm -f *.gif *.mp4 *.tape
