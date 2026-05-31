@@ -7,6 +7,7 @@
 all: \
     ase-mix-1 \
     ase-mix-2 \
+    ase-mix-3 \
     ase-code-analyze \
     ase-code-craft \
     ase-task-edit \
@@ -20,6 +21,8 @@ ase-mix-1:
 	bash render.bash ase-mix-1
 ase-mix-2:
 	bash render.bash ase-mix-2
+ase-mix-3:
+	bash render.bash ase-mix-3
 ase-code-analyze:
 	bash render.bash ase-code-analyze
 ase-code-craft:
