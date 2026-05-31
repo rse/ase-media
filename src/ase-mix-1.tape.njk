@@ -4,7 +4,7 @@
 ##  Licensed under GPL 3.0 <https://spdx.org/licenses/GPL-3.0-only>
 ##
 
-{% set name = "ase-arch-discover" %}
+{% set name = "ase-mix-1" %}
 {% set claude_flags = "-T -R -A --permission-mode bypassPermissions" %}
 {% set font_size = 18 %}
 
@@ -13,23 +13,38 @@
 Type '/ase-arch-discover command-line option parser'
 Enter
 Sleep 2s
-
 Wait+Screen /⏸ claudeX/
-Sleep 2s
+Sleep 4s
 
 Type '/ase-meta-evaluate Commander vs. Yargs vs. Optique, focus on popularity, features and TypeScript support'
 Enter
 Sleep 2s
-
 Wait+Screen /⏸ claudeX/
+Sleep 4s
+
+Type '/ase-meta-search Commander.js'
+Enter
 Sleep 2s
+Wait+Screen /⏸ claudeX/
+Sleep 4s
 
 Type '/ase-meta-diaboli Commander is better than Yargs for the ASE CLI'
 Enter
 Sleep 2s
-
 Wait+Screen /⏸ claudeX/
-Sleep 8s
+Sleep 4s
+
+Type '/ase-meta-why is Commander better than Yargs for command-line parsing?'
+Enter
+Sleep 2s
+Wait+Screen /⏸ claudeX/
+Sleep 4s
+
+Type '/ase-meta-quorum why is Commander better than Yargs for command-line parsing?'
+Enter
+Sleep 2s
+Wait+Screen /⏸ claudeX/
+Sleep 4s
 
 {% include "common-epilog.tape.njk" %}
 

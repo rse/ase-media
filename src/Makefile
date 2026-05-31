@@ -5,7 +5,8 @@
 ##
 
 all: \
-    ase-all-in-one \
+    ase-mix-1 \
+    ase-mix-2 \
     ase-code-analyze \
     ase-code-craft \
     ase-task-edit \
@@ -15,8 +16,10 @@ all: \
     ase-meta-persona \
     ase-meta-diaboli
 
-ase-all-in-one:
-	bash render.bash ase-all-in-one
+ase-mix-1:
+	bash render.bash ase-mix-1
+ase-mix-2:
+	bash render.bash ase-mix-2
 ase-code-analyze:
 	bash render.bash ase-code-analyze
 ase-code-craft:
