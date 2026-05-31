@@ -38,7 +38,7 @@
                 overflow: hidden;
                 background: #00000020;
                 aspect-ratio: 1200/1400;
-                filter: drop-shadow(0px 0px 8px #00000080);
+                filter: drop-shadow(0px 0px 4px #00000080);
                 transition: transform 0.15s ease;
             }
             .tile:hover,
@@ -60,7 +60,7 @@
                 padding: 8px 10px;
                 font-size: 14px;
                 color: #ffffff;
-                background: linear-gradient(transparent, #000000c0);
+                background: linear-gradient(transparent, #336699);
             }
             dialog.modal {
                 border: none;
@@ -72,7 +72,7 @@
                 overflow: visible;
             }
             dialog.modal::backdrop {
-                background: #000000d0;
+                background: #00336680;
             }
             dialog.modal .close {
                 position: absolute;
@@ -82,7 +82,7 @@
                 height: 36px;
                 border: none;
                 border-radius: 50%;
-                background: #111111e0;
+                background: #336699e0;
                 color: #ffffff;
                 font-size: 20px;
                 line-height: 36px;
@@ -99,7 +99,6 @@
         </style>
     </head>
     <body>
-        <h1>ASE</h1>
         <div id="tiles" class="tiles"></div>
 
         <dialog id="modal" class="modal">
@@ -110,7 +109,8 @@
         <script>
             const entries = [
                 "ase-meta-diaboli",
-                "ase-code-analyze"
+                "ase-code-analyze",
+                "ase-arch-discover"
             ]
 
             const tiles = document.getElementById("tiles")

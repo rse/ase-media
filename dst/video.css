@@ -13,12 +13,12 @@
 @media (min-aspect-ratio: 1200/1400) {
     .video {
         width:  auto;
-        height: 100vh;
+        height: 95vh;
     }
 }
 @media (max-aspect-ratio: 1200/1400) {
     .video {
-        width:  100vw;
+        width:  95vw;
         height: auto;
     }
 }
