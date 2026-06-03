@@ -5,17 +5,22 @@
 ##  Licensed under GPL 3.0 <https://spdx.org/licenses/GPL-3.0-only>
 ##
 
+#   take over session argument
 session="$1"
 
+#   generate the session recording script
 npx nunjucks -p @rse/nunjucks-addons -o $session.tape $session.tape.njk
 
+#   record the session
 vhs $session.tape
 
+#   remove the session recording script
 rm -f $session.tape
 
+#   preserve the MP4 video format
 mv $session.mp4 ../dst/
-mv $session.gif ../dst/
 
+#   generate the HLS video and JPG poster formats
 video2hls \
     --output ../dst/$session.hls \
     --output-overwrite \
@@ -29,6 +34,7 @@ video2hls \
     -- \
     ../dst/$session.mp4
 
+#   move poster format to final location
 mv ../dst/$session.hls/poster.jpg \
    ../dst/$session.jpg
 
