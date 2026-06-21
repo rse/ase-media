@@ -10,31 +10,22 @@
 
 {% include "common-prolog.tape.njk" %}
 
-Type '/ase-code-craft hello: "ase hello" CLI command which prints a nice "Hello World!" in blue to the terminal and which supports a CLI option -s/--subject with default value "Hello" for greeting a particular subject.'
+Type '/ase-code-craft hello: "ase hello" CLI command which prints a nice "Hello World!" in blue to the terminal and which supports a CLI option -s/--subject with default value "World" for greeting a particular subject.'
 Enter
 
 Wait+Screen /Select Approach/
 Sleep 2s
-Down
-Sleep 4s
-Up
-Sleep 4s
+Type "1"
+Enter
+
+Wait+Screen /IMPLEMENT/
+Sleep 2s
+Type "4"
 Enter
 
 Wait+Screen /DONE/
 Sleep 2s
-Down
-Sleep 1s
-Down
-Sleep 1s
-Down
-Sleep 2s
-Up
-Sleep 1s
-Up
-Sleep 1s
-Up
-Sleep 2s
+Type "1"
 Enter
 
 Wait+Screen /⏸ claudeX/
