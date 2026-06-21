@@ -28,6 +28,7 @@ video2hls \
     --no-mp4 \
     --no-audio \
     --poster-quality 80 \
+    --poster-seek 20s \
     --ratio 1200:1400 \
     --video-widths   1200  600 \
     --video-bitrates 2000 1000 \
