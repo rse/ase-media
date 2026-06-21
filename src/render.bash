@@ -9,7 +9,7 @@
 session="$1"
 
 #   generate the session recording script
-npx nunjucks -p @rse/nunjucks-addons -o $session.tape $session.tape.njk
+npx -y --package @rse/nunjucks-cli -p @rse/nunjucks-addons -- nunjucks -o $session.tape $session.tape.njk
 
 #   record the session
 vhs $session.tape
