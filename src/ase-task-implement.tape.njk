@@ -10,19 +10,12 @@
 
 {% include "common-prolog.tape.njk" %}
 
-#Escape
-#Type "[Z"
-#Sleep 1s
-
 Type '/ase-task-implement hello'
 Enter
 
 Wait+Screen /DONE/
 Sleep 2s
-Down
-Sleep 1s
-Up
-Sleep 2s
+Type 1
 Enter
 
 Wait+Screen /⏸ claudeX/
