@@ -4,15 +4,15 @@
 ##  Licensed under GPL 3.0 <https://spdx.org/licenses/GPL-3.0-only>
 ##
 
-{% set name = "ase-code-analyze" %}
+{% set name = "ase-meta-diaboli" %}
 {% set claude_flags = "-T -R -A --permission-mode bypassPermissions" %}
 {% set font_size = 18 %}
 
 {% include "common-prolog.tape.njk" %}
 
-Type "/ase-code-analyze --severity=MEDIUM @tool/src/"
+Type '/ase-meta-steelman -count=10 ASE is a useful Claude Code plugin'
 Enter
-Sleep 4s
+Sleep 2s
 
 Wait+Screen /⏸ claudeX/
 Sleep 8s

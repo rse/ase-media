@@ -15,7 +15,8 @@ all: \
     ase-meta-evaluate \
     ase-arch-discover \
     ase-meta-persona \
-    ase-meta-diaboli
+    ase-meta-diaboli \
+    ase-meta-steelman
 
 ase-mix-1:
 	bash render.bash ase-mix-1
@@ -39,6 +40,8 @@ ase-meta-persona:
 	bash render.bash ase-meta-persona
 ase-meta-diaboli:
 	bash render.bash ase-meta-diaboli
+ase-meta-steelman:
+	bash render.bash ase-meta-steelman
 
 clean:
 	-rm -f *.gif *.mp4 *.tape
