@@ -19,6 +19,7 @@ all: \
     ase-meta-steelman \
     ase-meta-brainstorm \
     ase-meta-why \
+    ase-meta-changelog \
     ase-docs-proofread \
     ase-docs-distill
 
@@ -50,6 +51,8 @@ ase-meta-brainstorm:
 	bash render.bash ase-meta-brainstorm
 ase-meta-why:
 	bash render.bash ase-meta-why
+ase-meta-changelog:
+	bash render.bash ase-meta-changelog
 ase-docs-proofread:
 	gsed -i -e 's;opinionated;opinionaded;' \
 		-e "s;in the disciplines;in the discipline;" \
