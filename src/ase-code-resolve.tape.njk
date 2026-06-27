@@ -1,0 +1,35 @@
+##
+##  Agentic Software Engineering (ASE)
+##  Copyright (c) 2025-2026 Dr. Ralf S. Engelschall <rse@engelschall.com>
+##  Licensed under GPL 3.0 <https://spdx.org/licenses/GPL-3.0-only>
+##
+
+{% set name = "ase-code-resolve" %}
+{% set claude_flags = "-T -R -A --permission-mode bypassPermissions" %}
+{% set font_size = 18 %}
+
+{% include "common-prolog.tape.njk" %}
+
+Type '/ase-code-resolve '
+Enter
+
+Wait+Screen /Select Approach/
+Sleep 2s
+Type "1"
+Enter
+
+Wait+Screen /IMPLEMENT/
+Sleep 2s
+Type "4"
+Enter
+
+Wait+Screen /DONE/
+Sleep 2s
+Type "1"
+Enter
+
+Wait+Screen /⏸ claudeX/
+Sleep 8s
+
+{% include "common-epilog.tape.njk" %}
+

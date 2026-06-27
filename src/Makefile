@@ -19,7 +19,8 @@ all: \
     ase-meta-steelman \
     ase-meta-brainstorm \
     ase-meta-why \
-    ase-docs-proofread
+    ase-docs-proofread \
+    ase-docs-distill
 
 ase-mix-1:
 	bash render.bash ase-mix-1
@@ -58,6 +59,8 @@ ase-docs-proofread:
 		-e "s;recurring,;recuring;" \
 		../../ase/README.md
 	bash render.bash ase-docs-proofread
+ase-docs-distill:
+	bash render.bash ase-docs-distill
 
 clean:
 	-rm -f *.gif *.mp4 *.tape
