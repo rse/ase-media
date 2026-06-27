@@ -18,6 +18,7 @@ all: \
     ase-meta-diaboli \
     ase-meta-steelman \
     ase-meta-brainstorm \
+    ase-meta-why \
     ase-docs-proofread
 
 ase-mix-1:
@@ -46,6 +47,8 @@ ase-meta-steelman:
 	bash render.bash ase-meta-steelman
 ase-meta-brainstorm:
 	bash render.bash ase-meta-brainstorm
+ase-meta-why:
+	bash render.bash ase-meta-why
 ase-docs-proofread:
 	gsed -i -e 's;opinionated;opinionaded;' \
 		-e "s;in the disciplines;in the discipline;" \
