@@ -16,7 +16,8 @@ all: \
     ase-arch-discover \
     ase-meta-persona \
     ase-meta-diaboli \
-    ase-meta-steelman
+    ase-meta-steelman \
+    ase-docs-proofread
 
 ase-mix-1:
 	bash render.bash ase-mix-1
@@ -42,6 +43,15 @@ ase-meta-diaboli:
 	bash render.bash ase-meta-diaboli
 ase-meta-steelman:
 	bash render.bash ase-meta-steelman
+ase-docs-proofread:
+	gsed -i -e 's;opinionated;opinionaded;' \
+		-e "s;in the disciplines;in the discipline;" \
+		-e "s;driver's seat;driver seat;" \
+		-e "s;STATUS QUO;STATE QUO;" \
+		-e "s;surface,;surface;" \
+		-e "s;recurring,;recuring;" \
+		../../ase/README.md
+	bash render.bash ase-docs-proofread
 
 clean:
 	-rm -f *.gif *.mp4 *.tape
