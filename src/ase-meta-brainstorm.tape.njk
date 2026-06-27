@@ -1,0 +1,21 @@
+##
+##  Agentic Software Engineering (ASE)
+##  Copyright (c) 2025-2026 Dr. Ralf S. Engelschall <rse@engelschall.com>
+##  Licensed under GPL 3.0 <https://spdx.org/licenses/GPL-3.0-only>
+##
+
+{% set name = "ase-meta-brainstorm" %}
+{% set claude_flags = "-T -R -A --permission-mode bypassPermissions" %}
+{% set font_size = 18 %}
+
+{% include "common-prolog.tape.njk" %}
+
+Type '/ase-meta-brainstorm --max-clarify=0 --min-ideas=10 clever and useful AI skills for software engineering'
+Enter
+Sleep 2s
+
+Wait+Screen /⏸ claudeX/
+Sleep 8s
+
+{% include "common-epilog.tape.njk" %}
+

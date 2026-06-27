@@ -17,6 +17,7 @@ all: \
     ase-meta-persona \
     ase-meta-diaboli \
     ase-meta-steelman \
+    ase-meta-brainstorm \
     ase-docs-proofread
 
 ase-mix-1:
@@ -43,6 +44,8 @@ ase-meta-diaboli:
 	bash render.bash ase-meta-diaboli
 ase-meta-steelman:
 	bash render.bash ase-meta-steelman
+ase-meta-brainstorm:
+	bash render.bash ase-meta-brainstorm
 ase-docs-proofread:
 	gsed -i -e 's;opinionated;opinionaded;' \
 		-e "s;in the disciplines;in the discipline;" \
