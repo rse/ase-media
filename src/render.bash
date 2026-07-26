@@ -18,7 +18,7 @@ vhs $session.tape
 rm -f $session.tape
 
 #   preserve the MP4 video format
-mv $session.mp4 ../dst/
+ffmpeg -i $session.mp4 -filter:v "setpts=0.5*PTS" -y ../dst/$session.mp4
 
 #   generate the HLS video and JPG poster formats
 video2hls \
